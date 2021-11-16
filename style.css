@@ -1,0 +1,42 @@
+.header{
+  font-size: 25px !important;
+  width: 100% !important;
+  margin-top: 0; 
+}
+
+.note{
+  color: darkblue;
+  font-size: 20px;
+}
+
+body{
+  background-size: cover;
+}
+
+button{
+  margin-top: 10px;
+  font-size: 20px !important;
+  width: 130px;
+}
+
+canvas
+{
+  border: 5px dotted yellow;
+  margin-top: 25px;
+  animation-name: shadow;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shadow
+{
+  from
+  {
+    box-shadow: 2px 2px 50px rgb(60, 255, 0);
+  }
+
+  to
+  {
+    box-shadow: 2px 2px 50px rgb(0, 153, 255)
+  }
+}
