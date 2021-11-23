@@ -6,6 +6,8 @@ rwx = 0
 rwy = 0
 scorelw = 0
 scorerw = 0
+song1_status = ""
+song2_status = ""
 
 function preload(){
   song1 = loadSound('Thunder.mp3');
@@ -27,6 +29,25 @@ function draw(){
   song1.rate(1)
   song2 .setVolume(0.5)
   song2.rate(1)
+  fill('red')
+  song1_status = song1.isPlaying()
+  if(scorelw > 0.2){
+    circle(lwx, lwy, 20)
+    song2.stop()
+    if(song1_status == false){
+      song1.play()
+      document.getElementById('song').innerHTML = 'Song: Thunder by Imagine Dragons'
+    }
+  }
+  if(scorerw > 0.2){
+    circle(rwx, rwy, 20)
+    song1.stop()
+    if(song2_status == false){
+      song2.play()
+      document.getElementById('song').innerHTML = 'Song: Gangnam Style'
+    }
+  }
+  
 }
 
 function modelLoaded(){
@@ -44,3 +65,4 @@ function gotPoses(results){
     scorerw = results[0].pose.keypoints[10].score;
   }
 }
+
